@@ -1,0 +1,35 @@
+import { useTranslations } from 'next-intl';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import type { TLocales } from '@/entities/next-intl';
+import type { ReactNode } from 'react';
+
+import { locales } from '@/entities/next-intl';
+
+type IndexPageProps = {
+  params: { locale: TLocales };
+};
+
+const CodeComponent = (chunks: ReactNode): ReactNode => (
+  <code className='font-mono text-white'>{chunks}</code>
+);
+
+const IndexPage = ({ params: { locale } }: IndexPageProps) => {
+  const isValidLocale = locales.some((cur: string) => cur === locale);
+  if (!isValidLocale) notFound();
+
+  unstable_setRequestLocale(locale as string);
+
+  const t = useTranslations('IndexPage');
+
+  return (
+    <main title={t('title')}>
+      <p>
+        {t.rich('description', {
+          code: CodeComponent,
+        })}
+      </p>
+    </main>
+  );
+};
+export default IndexPage;
