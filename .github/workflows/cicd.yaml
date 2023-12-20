@@ -3,7 +3,6 @@ name: CI/CD
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  BASE_URL: ${{ secrets.BASE_URL }}
 
 on:
   push:
@@ -17,9 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Install pnpm
-        run: npm install -g pnpm
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm install -g pnpm && pnpm i
       - name: Lint
         run: pnpm lint-staged
       - name: Type check
@@ -33,9 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Install pnpm
-        run: npm install -g pnpm
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm install -g pnpm && pnpm i
       - name: Install Vercel CLI
         run: pnpm install --global vercel@latest
       - name: Pull Vercel Environment Information
@@ -52,9 +47,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Install pnpm
-        run: npm install -g pnpm
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm install -g pnpm & pnpm i
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
       - name: Run Playwright tests
@@ -74,9 +67,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Install pnpm
-        run: npm install -g pnpm
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: npm install -g pnpm & pnpm i 
       - name: Install Vercel CLI
         run: pnpm i -g vercel@latest
       - name: Pull Vercel Environment Information
