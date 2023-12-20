@@ -11,7 +11,7 @@ on:
       - main
 
 jobs:
-  lint:
+  lint_test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,20 +24,18 @@ jobs:
         run: pnpm lint-staged
       - name: Type check
         run: pnpm run lint:type
-  test:
-    needs: lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
       - name: Run tests
         run: pnpm run test
   deploy-preview:
-    needs: [lint, test]
+    needs: lint_test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
       - name: Install Vercel CLI
         run: pnpm install --global vercel@latest
       - name: Pull Vercel Environment Information
@@ -53,6 +51,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
       - name: Run Playwright tests
@@ -69,7 +71,12 @@ jobs:
     needs: run-e2es
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.1
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
       - name: Install Vercel CLI
         run: pnpm i -g vercel@latest
       - name: Pull Vercel Environment Information
