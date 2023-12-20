@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: install pnpm
-        run: npm install -g pnpm && pnpm install
+        run: npm install -g pnpm 
       - name: Install
         run: pnpm install --no-frozen-lockfile
       - name: lint
