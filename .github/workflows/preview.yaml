@@ -21,7 +21,7 @@ jobs:
       - name: type
         run: pnpm run lint:type
       - name: test
-        run: pnpm run jest
+        run: pnpm run test 
   Deploy-Preview:
     needs: lint
     runs-on: ubuntu-latest
