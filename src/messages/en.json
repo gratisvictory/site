@@ -8,6 +8,15 @@
     "content": "<h1>Headline<h1><p>This is raw HTML</p>",
     "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>"
   },
+  "HeaderNav": {
+    "Home": "Home",
+    "Career": "Career",
+    "Resume": "Resume",
+    "About": "About me",
+    "Projects": "Projects",
+    "Blog": "Blog",
+    "Contact": "Contact"
+  },
   "Error": {
     "title": "Something went wrong!",
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>"
@@ -17,7 +26,7 @@
     "description": "Please double-check the browser address bar or use the navigation to go to a known page."
   },
   "LocaleLayout": {
-    "title": "english LocaleLayout"
+    "title": "Home"
   },
   "LocaleSwitcher": {
     "label": "Change language",

@@ -5,6 +5,7 @@ import type { TLocales } from '@/entities/next-intl';
 import type { ReactNode } from 'react';
 
 import { locales } from '@/entities/next-intl';
+import { DarkModeToggle } from '@/features/dark-mode';
 
 type IndexPageProps = {
   params: { locale: TLocales };
@@ -23,12 +24,13 @@ const IndexPage = ({ params: { locale } }: IndexPageProps) => {
   const t = useTranslations('IndexPage');
 
   return (
-    <main title={t('title')}>
+    <main className='transition-colors dark:text-red-300' title={t('title')}>
       <p>
         {t.rich('description', {
           code: CodeComponent,
         })}
       </p>
+      <DarkModeToggle />
     </main>
   );
 };

@@ -8,6 +8,15 @@
     "content": "<h1>Russian<h1><p>This is raw HTML</p>",
     "description": "<p>The pathnames are internationalized too. |Russian|</p><p>If you're using the default language English, you'll see |<code>/en/pathnames</code>| in the browser address bar on this page.</p><p>If you change the locale to Russian, the URL is localized accordingly |<code>/ru/pathnames</code>|.</p>"
   },
+  "HeaderNav": {
+    "Home": "Главная",
+    "Career": "Карьера",
+    "Resume": "Резюме",
+    "About": "О себе",
+    "Projects": "Проекты",
+    "Blog": "Блог",
+    "Contact": "Контакты"
+  },
   "Error": {
     "title": " Something went wrong!",
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>"
@@ -17,7 +26,7 @@
     "description": " Please double-check the browser address bar or use the navigation to go to a known page."
   },
   "LocaleLayout": {
-    "title": "LocaleLayout"
+    "title": "Главная"
   },
   "LocaleSwitcher": {
     "label": "Change language",

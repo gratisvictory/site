@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import type { TLocales } from '@/entities/next-intl';
 import type { ReactNode } from 'react';
 
+import ThemeProvider from '@/app/provider/theme-provider';
 import { locales } from '@/entities/next-intl';
 import { Navigation } from '@/features/navigation';
 
@@ -33,8 +34,10 @@ const LocaleLayout = ({ children, params: { locale } }: LocaleLayoutProps) => {
   return (
     <html lang={locale as 'ru' | 'en'}>
       <body className={clsx(inter.className, 'flex h-full flex-col  items-center')}>
-        <Navigation />
-        {children}
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          <Navigation />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
