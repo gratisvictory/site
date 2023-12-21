@@ -25,7 +25,7 @@ const IndexPage = ({ params: { locale } }: IndexPageProps) => {
 
   return (
     <main className='transition-colors dark:text-red-300' title={t('title')}>
-      <h1>Preview</h1>
+      <h1>Preview Vercel</h1>
       <p>
         {t.rich('description', {
           code: CodeComponent,

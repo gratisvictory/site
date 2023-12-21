@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 
 test('navigation & theme', async ({ page }) => {
-  await page.goto('https://site-red-one.vercel.app/ru');
+  await page.goto('https://site-git-preview-gratisvictory.vercel.app/ru');
   await page.getByRole('link', { name: 'Russian Pathnames' }).click();
   await page.getByRole('link', { name: 'Главная страница' }).click();
   await page.getByRole('button', { name: 'Change language' }).click();
