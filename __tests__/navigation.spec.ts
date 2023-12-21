@@ -1,8 +1,8 @@
 import { test } from '@playwright/test';
 
 test('navigation & theme', async ({ page }) => {
-  await page.goto('http://localhost:3000');
-  await page.goto('http://localhost:3000/ru');
+  await page.goto('/');
+  await page.goto('/ru');
   await page.getByRole('button', { name: 'Toggle theme' }).click();
   await page.getByRole('menuitem', { name: 'Light' }).click();
   await page.getByRole('button', { name: 'Toggle theme' }).click();
