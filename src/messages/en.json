@@ -3,6 +3,15 @@
     "title": "next-intl example",
     "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes."
   },
+  "PostsLayout": {
+    "title": "Posts"
+  },
+  "GratisVictoryLayout": {
+    "title": "gratisvictory"
+  },
+  "GratisVictoryPage": {
+    "title": "gratisvictory page"
+  },
   "PathnamesPage": {
     "title": "Pathnames",
     "content": "<h1>Headline<h1><p>This is raw HTML</p>",
@@ -35,7 +44,7 @@
   "Navigation": {
     "home": "Home",
     "pathnames": "Pathnames",
-    "blog": "blog"
+    "posts": "Posts"
   },
   "PageLayout": {
     "links": {

@@ -1,7 +1,9 @@
-import { test } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 test('navigation & theme', async ({ page }) => {
   await page.goto('/');
+  await expect(page).toHaveURL('/ru');
+  await expect(page).toHaveURL('/en');
   await page.goto('/ru');
   await page.getByRole('button', { name: 'Toggle theme' }).click();
   await page.getByRole('menuitem', { name: 'Light' }).click();

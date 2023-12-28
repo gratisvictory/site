@@ -7,7 +7,6 @@ import type { ReactNode } from 'react';
 
 import ThemeProvider from '@/app/provider/theme-provider';
 import { locales } from '@/entities/next-intl';
-import { Navigation } from '@/features/navigation';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,7 +34,6 @@ const LocaleLayout = ({ children, params: { locale } }: LocaleLayoutProps) => {
     <html lang={locale as 'ru' | 'en'}>
       <body className={clsx(inter.className, 'flex h-full flex-col  items-center')}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          <Navigation />
           {children}
         </ThemeProvider>
       </body>

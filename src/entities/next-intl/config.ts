@@ -11,6 +11,14 @@ const pathnames = {
     ru: '/pathnames',
     en: '/pathnames',
   },
+  '/gratisvictory': {
+    ru: '/gratisvictory',
+    en: '/gratisvictory',
+  },
+  '/posts': {
+    ru: '/posts',
+    en: '/posts',
+  },
 } satisfies Pathnames<typeof locales>;
 
 type AppPathnames = keyof typeof pathnames;

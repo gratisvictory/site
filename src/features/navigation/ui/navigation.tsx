@@ -11,6 +11,7 @@ const Navigation = () => {
         <div>
           <NavigationLink href='/'>{t('home')}</NavigationLink>
           <NavigationLink href='/pathnames'>{t('pathnames')}</NavigationLink>
+          <NavigationLink href='/posts'>{t('posts')}</NavigationLink>
         </div>
         <LocaleSwitcher />
       </nav>
